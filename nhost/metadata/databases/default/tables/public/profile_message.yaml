@@ -1,0 +1,13 @@
+table:
+  name: profile_message
+  schema: public
+object_relationships:
+- name: recipient
+  using:
+    foreign_key_constraint_on: recipient_id
+- name: profile
+  using:
+    foreign_key_constraint_on: profile_id
+- name: workspace
+  using:
+    foreign_key_constraint_on: workspace_id

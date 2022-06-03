@@ -1,0 +1,13 @@
+table:
+  name: workspace_member
+  schema: public
+object_relationships:
+- name: profile
+  using:
+    foreign_key_constraint_on: profile_id
+- name: profile_type
+  using:
+    foreign_key_constraint_on: type
+- name: workspace
+  using:
+    foreign_key_constraint_on: workspace_id
