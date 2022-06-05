@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { Toaster } from 'react-hot-toast';
-//import { UserProvider } from '../UserProvider';
+import { UserProvider } from '../UserProvider';
 import { NhostNextProvider, NhostClient } from '@nhost/nextjs';
 import { NhostApolloProvider } from '@nhost/react-apollo'
 
@@ -12,8 +12,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <NhostNextProvider nhost={nhost} initial={pageProps.nhostSession}>
       <NhostApolloProvider nhost={nhost}>
-        <Component {...pageProps} />
-        <Toaster />
+        <UserProvider>
+          <Component {...pageProps} />
+          <Toaster />
+        </UserProvider>
       </NhostApolloProvider>
     </NhostNextProvider>
   );
