@@ -31,7 +31,7 @@ const Layout = ({ children = null }) => {
     },
     {
       label: 'Logout',
-      onClick: () => signOut,
+      onClick: () => signOut(),
       icon: LogoutIcon,
     },
   ];
